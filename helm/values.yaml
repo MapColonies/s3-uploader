@@ -63,3 +63,13 @@ ingress:
   cors:
     enabled: true
     origin: '*'
+
+s3:
+  enable: true
+  accessKeyId: ""
+  secretAccessKey: ""
+  region: ""
+  endPoint: ""
+  bucket: ""
+
+nfsDir: ""

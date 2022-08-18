@@ -9,3 +9,12 @@ export interface OpenApiConfig {
   jsonPath: string;
   uiPath: string;
 }
+
+export interface PathParams {
+  modelPath: string;
+}
+
+export interface ImountDirObj {
+  physical: string;
+  displayName: string;
+}

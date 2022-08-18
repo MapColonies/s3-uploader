@@ -8,11 +8,11 @@
   "telemetry": {
     "logger": {
       "level": "info",
-      "prettyPrint": false
+      "prettyPrint": true
     }
   },
   "server": {
-    "port": "8080",
+    "port": "8087",
     "request": {
       "payload": {
         "limit": "1mb"
@@ -24,5 +24,14 @@
         "options": null
       }
     }
-  }
+  },
+  "s3": {
+    "awsAccessKeyId": "minioadmin",
+    "awsSecretAccessKey": "minioadmin",
+    "endPoint": "http://127.0.0.1:9000",
+    "forcePathStyle": true,
+    "bucket": "3dtiles",
+    "destinationBucket": "3dtiles-destination"
+  },
+  "3dir": "../3D-Models"
 }

@@ -1,58 +1,67 @@
 openapi: 3.0.1
 info:
-  title: service-name
-  description: basic template for map colonies service
+  title: list-files
+  description: service that lists files from NFS or S3
   version: 1.0.0
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
 
 paths:
-  /anotherResource:
+  /listFiles/NFS/{modelPath}:
     get:
-      operationId: getAnotherResource
+      operationId: getFromNFS
       tags:
-        - anotherResource
-      summary: gets the resource
+        - NFS
+      summary: gets the files
+      parameters:
+        - $ref: '#/components/parameters/modelPath'
       responses:
         200:
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/anotherResource'
-  /resourceName:
+                $ref: '#/components/schemas/content'
+  /listFiles/S3/{modelPath}:
     get:
-      operationId: getResourceName
+      operationId: getFromS3
       tags:
-        - resourceName
-      summary: gets the resource
+        - S3
+      summary: gets the files
+      parameters:
+        - $ref: '#/components/parameters/modelPath'
       responses:
         200:
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/resource'
+                $ref: '#/components/schemas/content'
     post:
-      operationId: createResource
+      operationId: postFromS3ToS3
       tags:
-        - resourceName
-      summary: creates a new record of type resource
+        - S3
+      summary: gets the files
+      parameters:
+        - $ref: '#/components/parameters/modelPath'
       responses:
-        201:
-          description: created
+        200:
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/resource'
-        400:
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/error'
+                $ref: '#/components/schemas/content'
+
 components:
+  parameters:
+    modelPath:
+      in: path
+      name: modelPath
+      required: true
+      schema:
+        type: string
+      description: The 3d model name
   schemas:
     error:
       type: object
@@ -61,27 +70,5 @@ components:
       properties:
         message:
           type: string
-    resource:
-      type: object
-      required:
-        - id
-        - name
-        - description
-      properties:
-        id:
-          type: number
-          format: int64
-        name:
-          type: string
-        description:
-          type: string
-    anotherResource:
-      type: object
-      required:
-        - kind
-        - isAlive
-      properties:
-        kind:
-          type: string
-        isAlive:
-          type: boolean
+    content:
+      type: array

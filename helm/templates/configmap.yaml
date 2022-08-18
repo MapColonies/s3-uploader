@@ -19,4 +19,10 @@ data:
   TELEMETRY_METRICS_ENABLED: 'true'
   TELEMETRY_METRICS_URL: {{ $metricsUrl }}
   {{ end }}
+  ACCESS_KEY_ID: {{ .Values.s3.accessKeyId }}
+  SECRET_ACCESS_KEY: {{ .Values.s3.secretAccessKey }}
+  REGION: {{ .Values.s3.region }}
+  END_POINT: {{ .Values.s3.endPoint }}
+  BUCKET: {{ .Values.s3.bucket }}
+  NFS: {{ .Values.nfsDir }}
 {{- end }}

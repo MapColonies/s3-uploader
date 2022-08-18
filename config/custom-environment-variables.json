@@ -38,5 +38,13 @@
         }
       }
     }
-  }
+  },
+  "s3": {
+    "awsAccessKeyId": "ACCESS_KEY_ID",
+    "awsSecretAccessKey": "SECRET_ACCESS_KEY",
+    "region": "REGION",
+    "endPoint": "END_POINT",
+    "bucket": "BUCKET"
+  },
+  "3dir": "NFS"
 }

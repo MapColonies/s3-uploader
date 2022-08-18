@@ -1,1 +1,22 @@
-{}
+{
+  "valid": {
+    "s3": {
+      "awsAccessKeyId": "minioadmin",
+      "awsSecretAccessKey": "minioadmin",
+      "endPoint": "http://127.0.0.1:9000",
+      "forcePathStyle": true,
+      "bucket": "3dtiles"
+    },
+    "3dir": "../3D-Models"
+  },
+  "invalid": {
+    "s3": {
+      "awsAccessKeyId": "avi",
+      "awsSecretAccessKey": "minioadmin",
+      "endPoint": "http://127.0.0.1:9000",
+      "forcePathStyle": true,
+      "bucket": "3dtiles"
+    },
+    "3dir": "../3D-Models"
+  }
+}
