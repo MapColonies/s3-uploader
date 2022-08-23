@@ -8,36 +8,36 @@ info:
     url: https://opensource.org/licenses/MIT
 
 paths:
-  /listFiles/NFS/{modelPath}:
-    get:
-      operationId: getFromNFS
-      tags:
-        - NFS
-      summary: gets the files
-      parameters:
-        - $ref: '#/components/parameters/modelPath'
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/content'
+  # /listFiles/NFS/{modelPath}:
+  #   get:
+  #     operationId: getFromNFS
+  #     tags:
+  #       - NFS
+  #     summary: gets the files
+  #     parameters:
+  #       - $ref: '#/components/parameters/modelPath'
+  #     responses:
+  #       200:
+  #         description: OK
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: '#/components/schemas/content'
   /listFiles/S3/{modelPath}:
-    get:
-      operationId: getFromS3
-      tags:
-        - S3
-      summary: gets the files
-      parameters:
-        - $ref: '#/components/parameters/modelPath'
-      responses:
-        200:
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/content'
+    # get:
+    #   operationId: getFromS3
+    #   tags:
+    #     - S3
+    #   summary: gets the files
+    #   parameters:
+    #     - $ref: '#/components/parameters/modelPath'
+    #   responses:
+    #     200:
+    #       description: OK
+    #       content:
+    #         application/json:
+    #           schema:
+    #             $ref: '#/components/schemas/content'
     post:
       operationId: postFromS3ToS3
       tags:

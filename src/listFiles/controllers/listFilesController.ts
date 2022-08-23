@@ -26,29 +26,29 @@ export class ListFilesController {
     this.createdResourceCounter = meter.createCounter('created_resource');
   }
 
-  public getFromNFS: GetResourceHandler = (req, res, next) => {
-    try {
-      const { modelPath } = req.params;
-      return res.status(httpStatus.OK).json(this.manager.getFromNFSManager(modelPath));
-    } catch (error) {
-      if (error instanceof PathNotExists) {
-        (error as HttpError).status = httpStatus.BAD_REQUEST;
-      }
-      return next(error);
-    }
-  };
+  // public getFromNFS: GetResourceHandler = (req, res, next) => {
+  //   try {
+  //     const { modelPath } = req.params;
+  //     return res.status(httpStatus.OK).json(this.manager.getFromNFSManager(modelPath));
+  //   } catch (error) {
+  //     if (error instanceof PathNotExists) {
+  //       (error as HttpError).status = httpStatus.BAD_REQUEST;
+  //     }
+  //     return next(error);
+  //   }
+  // };
 
-  public getFromS3: GetResourceHandler = async (req, res, next) => {
-    try {
-      const { modelPath } = req.params;
-      return res.status(httpStatus.OK).json(await this.manager.getFromS3Manager(modelPath));
-    } catch (error) {
-      if (error instanceof PathNotExists) {
-        (error as HttpError).status = httpStatus.BAD_REQUEST;
-      }
-      return next(error);
-    }
-  };
+  // public getFromS3: GetResourceHandler = async (req, res, next) => {
+  //   try {
+  //     const { modelPath } = req.params;
+  //     return res.status(httpStatus.OK).json(await this.manager.getFromS3Manager(modelPath));
+  //   } catch (error) {
+  //     if (error instanceof PathNotExists) {
+  //       (error as HttpError).status = httpStatus.BAD_REQUEST;
+  //     }
+  //     return next(error);
+  //   }
+  // };
 
   public postFromS3ToS3: CreateRequestHandler = async (req, res, next) => {
     try {
