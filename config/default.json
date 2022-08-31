@@ -33,5 +33,7 @@
     "bucket": "3dtiles",
     "destinationBucket": "3dtiles-destination"
   },
-  "3dir": "../3D-Models"
+  "3dir": "../3D-Models",
+  "source": "S3",
+  "buffer": 20
 }

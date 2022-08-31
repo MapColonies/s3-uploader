@@ -12,7 +12,7 @@ import { PathParams } from '../../common/interfaces';
 import { ListFilesManager } from '../models/listFilesManager';
 
 type GetResourceHandler = RequestHandler<PathParams, string[]>;
-type CreateRequestHandler = RequestHandler<PathParams, void>;
+type CreateRequestHandler = RequestHandler<PathParams, string>;
 
 @injectable()
 export class ListFilesController {
